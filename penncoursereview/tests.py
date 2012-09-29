@@ -1,7 +1,6 @@
 import nose
 
-from api import *
-from models import *
+from penncoursereview import *
 
 
 def test_PCRStruct():
