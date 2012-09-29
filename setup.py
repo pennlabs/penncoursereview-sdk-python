@@ -1,5 +1,6 @@
+from distutils.core import setup
+
 from penncoursereview import __version__
-from setuptools import setup, find_packages
 
 # To install the penncoursereview library, open a Terminal shell, then run this
 # file by typing:
@@ -12,12 +13,12 @@ from setuptools import setup, find_packages
 setup(
     name="penncoursereview",
     version=__version__,
-    description="Penn Course Review API client",
     author="Ceasar Bautista",
     author_email="cbautista2010@gmail.com",
     url="https://github.com/pennappslabs/penncoursereview-sdk-python",
+    description="Penn Course Review API client",
     keywords=["penncoursereview", "penn", "upenn"],
-    packages=find_packages(),
+    packages=['penncoursereview'],
     classifiers=[
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
@@ -27,6 +28,9 @@ setup(
         "Programming Language :: Python :: 2.6",
         "Programming Language :: Python :: 2.7",
         "Topic :: Software Development :: Libraries :: Python Modules",
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "Intended Audience :: Education",
         ],
     long_description="""\
     Python PennCourseReview Helper Library
