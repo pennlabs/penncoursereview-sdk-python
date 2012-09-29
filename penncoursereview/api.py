@@ -1,15 +1,9 @@
 import abc
-import functools
 import json
-import os
 import urllib
 import urllib2
 
 from memoize import memoize
-
-
-DOMAIN = "http://pennapps.com/courses-demo/"
-TOKEN = os.environ["PCR_AUTH_TOKEN"]
 
 
 @memoize
@@ -23,15 +17,14 @@ def fetch(domain, *args, **kwargs):
     except urllib2.HTTPError:
         raise ValueError("invalid uri: %s", uri)
     return json.loads(response.read())
-fetch = functools.partial(fetch, DOMAIN, token=TOKEN)
 
 
 class Resource(object):
     """Abstract base class wrapper for a dict to give it an object interface.
 
     >>> d = {'foo': 1, 'bar': {'a': 3, 'b': 4}}
-    >>> ConcreteResource = type('ConcreteResource', (Resource,), {'_load': lambda: 0})
-    >>> o = ConcreteResource(d)
+    >>> MyResource = type('MyResource', (Resource,), {'_load': lambda: 0})
+    >>> o = MyResource(d)
     >>> o
     {foo : 1, bar : {a : 3, b : 4}}
     >>> o.foo
