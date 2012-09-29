@@ -8,7 +8,7 @@ from memoize import memoize
 
 @memoize
 def fetch(domain, *args, **kwargs):
-    assert domain.endswith("/")
+    assert domain.endswith("/"), "BAD DOMAIN: %s" % domain
     path = "/".join(str(arg) for arg in args)
     query = urllib.urlencode(kwargs)
     uri = "".join((domain, path, "?", query))

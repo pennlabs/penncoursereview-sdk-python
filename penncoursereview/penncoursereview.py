@@ -14,7 +14,7 @@ DOMAIN = "http://pennapps.com/courses-demo/"
 def fetch_pcr(*args, **kwargs):
     """Wrapper for fetch to automatically parse results from the PCR API."""
     kwargs['token'] = os.environ["PCR_AUTH_TOKEN"]
-    return fetch(*args, **kwargs)['result']
+    return fetch(DOMAIN, *args, **kwargs)['result']
 
 
 class PCRResource(Resource):
