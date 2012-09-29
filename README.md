@@ -27,7 +27,9 @@ Getting started has been made to be as simple as possible. Set up your applicati
 
 ## API Credentials
 
-In order to fetch data, the `penncoursereview` client needs your PCR token. To help ensure that you never have to worry about committing your credentials and posting them somewhere public, the module will only check for `PCR_AUTH_TOKEN` inside of the current environment.
+In order to fetch data, the `penncoursereview` client needs your PCR token. To help ensure that nobody ever has to worry about credentials ending up somewhere public, the module check for `PCR_AUTH_TOKEN` inside of the current environment.
+
+To make your token visible, simply export your token as follows: `export PCR_AUTH_TOKEN="mytoken"`. This will make your token available in the current session. In order to avoid retyping the above each time, you may want to add that line to `.profile`.
 
 ## Making Calls 
 
