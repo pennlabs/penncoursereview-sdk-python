@@ -15,7 +15,7 @@ setup(
     description="Penn Course Review API client",
     author="Ceasar Bautista",
     author_email="cbautista2010@gmail.com",
-    url="",
+    url="https://github.com/pennappslabs/penncoursereview-sdk-python",
     keywords=["penncoursereview", "penn", "upenn"],
     packages=find_packages(),
     classifiers=[
