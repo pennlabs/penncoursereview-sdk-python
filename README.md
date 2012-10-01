@@ -31,6 +31,8 @@ In order to fetch data, the `penncoursereview` client needs your PCR token. To h
 
 To make your token visible, simply export your token as follows: `export PCR_AUTH_TOKEN="mytoken"`. This will make your token available in the current session. In order to avoid retyping the above each time, you may want to add that line to `.profile`.
 
+By default, if no token is provided, the "public" token will be used, which only gives access to registrar data.
+
 ## Making Calls 
 
 The `penncoursereview` client gives you six useful tools to interact with the PCR-API.

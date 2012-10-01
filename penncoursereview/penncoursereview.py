@@ -8,12 +8,17 @@ import os
 from api import fetch, Resource
 
 
-DOMAIN = "http://pennapps.com/courses-demo/"
+DOMAIN = "http://api.penncoursereview.com/v1/"
 
 
 def fetch_pcr(*args, **kwargs):
-    """Wrapper for fetch to automatically parse results from the PCR API."""
-    kwargs['token'] = os.environ["PCR_AUTH_TOKEN"]
+    """Wrapper for fetch to automatically parse rehttp://pennapps.com/courses-demo/sults from the PCR API."""
+    try:
+        # Attempt to load the user's token
+        kwargs['token'] = os.environ["PCR_AUTH_TOKEN"]
+    except KeyError:
+        # On error, use the public token
+        kwargs['token'] = "public"
     return fetch(DOMAIN, *args, **kwargs)['result']
 
 
