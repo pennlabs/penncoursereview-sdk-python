@@ -1,7 +1,6 @@
 import abc
-import json
-import urllib
-import urllib2
+
+import requests
 
 from memoize import memoize
 
@@ -10,13 +9,9 @@ from memoize import memoize
 def fetch(domain, *args, **kwargs):
     assert domain.endswith("/"), "BAD DOMAIN: %s" % domain
     path = "/".join(str(arg) for arg in args)
-    query = urllib.urlencode(kwargs)
-    uri = "".join((domain, path, "?", query))
-    try:
-        response = urllib2.build_opener().open(uri)
-    except urllib2.HTTPError:
-        raise ValueError("invalid uri: %s", uri)
-    return json.loads(response.read())
+    uri = domain + path
+    r = requests.get(uri, params=kwargs)
+    return r.json
 
 
 class Resource(object):
