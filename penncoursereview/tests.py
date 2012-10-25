@@ -1,9 +1,12 @@
-import nose
-
-from penncoursereview import *
+from penncoursereview import Department
 
 
-def test_PCRStruct():
+def test_PCRStruct_known_key():
+    d = Department("MKSE")
+    assert d.reviews
+
+
+def test_PCRStruct_load_key():
     d = Department("MKSE")
     print d
     print type(d.reviews)

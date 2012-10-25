@@ -5,14 +5,16 @@ Note, when using fetch be careful to use strings for 0-prefixed numbers.
 """
 import os
 
-from api import fetch, Resource
+import trees
+
+from api import fetch
 
 
 DOMAIN = "http://api.penncoursereview.com/v1/"
 
 
 def fetch_pcr(*args, **kwargs):
-    """Wrapper for fetch to automatically parse rehttp://pennapps.com/courses-demo/sults from the PCR API."""
+    """Wrapper for fetch to easily parse results from the PCR API."""
     try:
         # Attempt to load the user's token
         kwargs['token'] = os.environ["PCR_AUTH_TOKEN"]
@@ -22,13 +24,13 @@ def fetch_pcr(*args, **kwargs):
     return fetch(DOMAIN, *args, **kwargs)['result']
 
 
-class PCRResource(Resource):
+class PCRResource(trees.ObjectifiedDict):
     """Concrete Resource that fetches data from the PCR API as needed."""
 
-    def _load(self):
+    def __missing__(self, key):
         # PCR Resources are guaranteed to have a 'path' attribute
         # We can use that to update the object
-        self._update(fetch_pcr(*self.path.split("/")))
+        return fetch_pcr(*self.path.split("/"))
 
 
 # Convenience classes
