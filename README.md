@@ -80,4 +80,4 @@ In this way, you can chain some rather long requests provided you know what will
 
 ## Learning More
 
-To learn more about what data is available, visit the official [PennCourseReview docs](http://pennapps.com/console/docs.html).
+To learn more about what data is available, visit the official [PennCourseReview docs](http://pennlabs.org/docs/pcr.html).
