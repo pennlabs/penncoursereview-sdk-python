@@ -1,5 +1,7 @@
 # pcr-python-sdk
 
+[![Build Status](https://travis-ci.org/pennlabs/penncoursereview-sdk-python.svg)](https://travis-ci.org/pennlabs/penncoursereview-sdk-python)
+
 A module for using the Penn Course Review (PCR) API.
 
 # Installation

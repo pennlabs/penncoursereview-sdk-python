@@ -31,7 +31,7 @@ setup(
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "Intended Audience :: Education",
-        ],
+    ],
     long_description="""\
     Python PennCourseReview Helper Library
     ----------------------------
@@ -39,7 +39,7 @@ setup(
     DESCRIPTION
     The PCR SDK simplifies the process of making calls to the PCR REST API.
     The PCR REST API lets you gather data about courses at the University of
-    Pennnyslyvania. See website for more information.
+    Pennsylvania. See website for more information.
 
      LICENSE The Python PennCourseReview Helper Library is distributed under
     the MIT License """)
