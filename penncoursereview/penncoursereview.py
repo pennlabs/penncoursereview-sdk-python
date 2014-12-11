@@ -12,7 +12,7 @@ DOMAIN = "http://api.penncoursereview.com/v1/"
 
 
 def fetch_pcr(*args, **kwargs):
-    """Wrapper for fetch to automatically parse rehttp://pennapps.com/courses-demo/sults from the PCR API."""
+    """Wrapper for fetch to automatically parse results from the PCR API."""
     try:
         # Attempt to load the user's token
         kwargs['token'] = os.environ["PCR_AUTH_TOKEN"]
@@ -52,7 +52,7 @@ def Instructor(iid):
     *  iid - The id of the instructor
 
     >>> Instructor("1356-MICHAEL-KEARNS").first_name
-    u'MICHAEL'
+    u'MICHAEL J.'
     """
     return PCRResource(fetch_pcr("instructors", iid))
 
@@ -98,8 +98,3 @@ def Department(did):
     u'ASTRONOMY'
     """
     return PCRResource(fetch_pcr("depts", did))
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()

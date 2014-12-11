@@ -70,8 +70,3 @@ class Resource(object):
         """Make the resource appear like a dict."""
         return '{%s}' % str(', '.join('%s : %s' % (k, repr(v)) for
             (k, v) in self.__dict__.iteritems()))
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
