@@ -5,7 +5,7 @@ Note, when using fetch be careful to use strings for 0-prefixed numbers.
 """
 import os
 
-from api import fetch, Resource
+from .api import fetch, Resource
 
 
 DOMAIN = "http://api.penncoursereview.com/v1/"

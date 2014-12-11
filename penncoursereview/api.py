@@ -2,7 +2,7 @@ import abc
 
 import requests
 
-from memoize import memoize
+from .memoize import memoize
 
 
 @memoize
