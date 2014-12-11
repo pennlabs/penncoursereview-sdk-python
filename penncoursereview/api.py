@@ -1,6 +1,7 @@
 import abc
 
 import requests
+import six
 
 from .memoize import memoize
 
@@ -11,7 +12,7 @@ def fetch(domain, *args, **kwargs):
     path = "/".join(str(arg) for arg in args)
     uri = domain + path
     r = requests.get(uri, params=kwargs)
-    return r.json
+    return r.json()
 
 
 class Resource(object):
@@ -45,7 +46,7 @@ class Resource(object):
 
     def _update(self, data):
         """Update the object with new data."""
-        for k, v in data.iteritems():
+        for k, v in six.iteritems(data):
             new_value = v
             if isinstance(v, dict):
                 new_value = type(self)(v)
@@ -69,4 +70,4 @@ class Resource(object):
     def __repr__(self):
         """Make the resource appear like a dict."""
         return '{%s}' % str(', '.join('%s : %s' % (k, repr(v)) for
-            (k, v) in self.__dict__.iteritems()))
+            (k, v) in six.iteritems(self.__dict__)))
