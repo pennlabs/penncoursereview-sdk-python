@@ -1,8 +1,17 @@
 sudo: false
 language: python
 python:
-  - "2.6"
-  - "2.7"
-  - "3.4"
-  - "3.5"
+- '2.6'
+- '2.7'
+- '3.4'
+- '3.5'
 script: nosetests
+deploy:
+  provider: pypi
+  user: pennappslabs
+  password:
+    secure: EGuVpECkpZAU+du0tuoe4GjOnOwgGpYFgIOnU0eSXuBhbS/MVqYAoXktYQocQ/07hMfhhea3O7/2aS1zy59UdCCMAN07b5ab+jawrbJTz/LI7dRMOvDfbG5UqHcJIy8hvNSOK7sjZnHYlwltmkUPrVA/p3NtZGjUBeoV1Le1SIk=
+  on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: pennlabs/penncoursereview-sdk-python
