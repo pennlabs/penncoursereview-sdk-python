@@ -1,6 +1,7 @@
 from distutils.core import setup
 
-from penncoursereview import __version__
+__version_info__ = ('0', '1', '0')
+__version__ = '.'.join(__version_info__)
 
 # To install the penncoursereview library, open a Terminal shell, then run this
 # file by typing:
