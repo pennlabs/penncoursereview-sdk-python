@@ -1,5 +1,4 @@
 import penncoursereview as pcr
-from penncoursereview.api import Resource
 from nose.tools import assert_equal
 
 MKERNS = "1356-MICHAEL-KEARNS"
@@ -24,12 +23,3 @@ class TestPennCourseReview:
 
     def test_department(self):
         assert_equal(pcr.Department("ASTR").name, 'ASTRONOMY')
-
-
-def test_resource():
-    d = {'foo': 1, 'bar': {'a': 3, 'b': 4}}
-    MyResource = type('MyResource', (Resource,), {'_load': lambda: 0})
-    o = MyResource(d)
-    assert_equal(o.foo, 1)
-    assert_equal(o["foo"], 1)
-    assert_equal(o.bar.a, 3)
