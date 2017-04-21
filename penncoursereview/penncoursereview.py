@@ -86,6 +86,16 @@ def CourseHistory(chid):
     return PCRResource(fetch_pcr("coursehistories", chid))
 
 
+def ReviewHistory(chid):
+    """Instantiate a CourseHistory of reviews.
+    * chid - The id of the coursehistory or its alias
+
+    >>> ReviewHistory("CIS-160")['values'][0].num_reviewers
+    84
+    """
+    return PCRResource(fetch_pcr("coursehistories", chid, "reviews"))
+
+
 def Department(did):
     """Instantiate a Department.
     *  did - The id of the Department
