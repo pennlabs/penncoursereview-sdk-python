@@ -10,7 +10,7 @@ class TestPennCourseReview:
         assert_equal(pcr.Review("24765", "001", MKERNS).num_students, 88)
 
     def test_instructor(self):
-        assert_equal(pcr.Instructor(MKERNS).first_name, 'MICHAEL J.')
+        assert_equal(pcr.Instructor(MKERNS).first_name, 'MICHAEL')
 
     def test_section(self):
         assert_equal(pcr.Section(2795, 401).name, 'INTRO COGNITIVE SCIENCE')
